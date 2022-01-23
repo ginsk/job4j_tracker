@@ -18,20 +18,17 @@ public class Triangle {
     }
 
     public boolean exist(double ab, double ac, double bc) {
-        if (ab > ac + bc || ac > ab + bc || bc > ab + bc) {
-            return false;
-        }
-        return true;
+        return (ab < ac + bc & ac < ab + bc & bc < ab + ac);
     }
 
     public double area() {
-        double rsl = 0;
+        double rsl = -1;
         double ab = first.distance(second);
         double ac = first.distance(third);
         double bc = second.distance(third);
         if (this.exist(ab, ac, bc)) {
             double p = semiPerimeter(ab, ac, bc);
-            rsl = sqrt(p * (p - ab) * (p - bc) * (p - ac));
+            rsl = Math.sqrt(p * (p - ab) * (p - bc) * (p - ac));
         }
         return rsl;
     }
