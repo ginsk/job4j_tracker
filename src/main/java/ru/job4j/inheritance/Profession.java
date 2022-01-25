@@ -16,8 +16,8 @@ public class Profession {
         this.education = education;
         this.birthday = birthday;
     }
-    public Profession() {
 
+    public Profession() {
     }
 
     public String getName(String name) {
