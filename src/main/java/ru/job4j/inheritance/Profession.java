@@ -24,4 +24,4 @@ public class Profession {
         return name;
     }
 
-}
+ }

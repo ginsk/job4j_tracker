@@ -8,5 +8,4 @@ public class Surgeon extends Doctor {
         super(name, surname, education, birthday, resept);
         this.blade = blade;
     }
-
 }

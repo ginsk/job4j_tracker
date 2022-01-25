@@ -8,4 +8,4 @@ public class Programmer extends Engineer {
         super(name, surname, education, birthday, glass);
         this.bed = bed;
     }
-}
+ }

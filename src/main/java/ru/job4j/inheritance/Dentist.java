@@ -8,5 +8,4 @@ public class Dentist extends Doctor {
         super(name, surname, education, birthday, resept);
         this.drill = drill;
     }
-
 }

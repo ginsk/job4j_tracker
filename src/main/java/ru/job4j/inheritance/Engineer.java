@@ -8,4 +8,4 @@ public class Engineer extends Profession {
         super(name, surname, education, birthday);
         this.glass = glass;
     }
-}
+ }
