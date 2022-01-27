@@ -5,7 +5,7 @@ public class Library {
         Book happy = new Book("Drink Happy", 102);
         Book head = new Book("Hard morning", 1);
         Book face = new Book("Terrible mirrow", 8);
-        Book life = new Book("Clean code", 0);
+        Book life = new Book("Clean code", 1);
         Book[] books = new Book[4];
         books[0] = happy;
         books[1] = head;
