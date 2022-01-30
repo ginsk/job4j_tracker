@@ -53,4 +53,26 @@ public class Tracker {
         }
         return Arrays.copyOf(tItems, count);
     }
+
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        boolean rsl = index != -1;
+        if (!rsl) {
+            return rsl;
+        }
+        item.setId(id);
+        items[index] = item;
+        return rsl;
+    }
 }
