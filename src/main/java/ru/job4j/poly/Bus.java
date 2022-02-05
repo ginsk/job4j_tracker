@@ -8,7 +8,7 @@ public class Bus implements Transport {
 
     @Override
     public void passenger(int ticket) {
-        System.out.println("Карбованци треба!");
+        System.out.println(ticket);
     }
 
     @Override
