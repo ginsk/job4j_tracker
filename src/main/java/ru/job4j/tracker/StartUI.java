@@ -19,7 +19,7 @@ public class StartUI {
         } else {
             System.out.println("Хранилище еще не содержит заявок.");
         }
-    }
+     }
 
     public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
