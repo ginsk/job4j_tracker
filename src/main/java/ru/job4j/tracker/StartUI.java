@@ -43,7 +43,6 @@ public class StartUI {
     }
 
     public static void findId(Input input, Tracker tracker) {
-        System.out.print("Enter id: ");
         int id = input.askInt("Enter id: ");
         Item item = tracker.findById(id);
         if (item != null) {
