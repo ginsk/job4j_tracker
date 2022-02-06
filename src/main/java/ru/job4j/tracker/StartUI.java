@@ -9,7 +9,7 @@ public class StartUI {
         System.out.println("Добавленная заявка: " + item);
     }
 
-    public static void editItem(Input input, Tracker tracker) {
+    public static void detelItem(Input input, Tracker tracker) {
         System.out.println("=== Show all items ===");
         Item[] items = tracker.findAll();
         if (items.length > 0) {
@@ -21,9 +21,9 @@ public class StartUI {
         }
     }
 
-    public static void deteleItem(Input input, Tracker tracker) {
+    public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
-        int id = Integer.parseInt(input.askStr("Enter id: "));
+        int id = input.askInt("Enter id: ");
         String name =  input.askStr("Enter name: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
@@ -34,7 +34,7 @@ public class StartUI {
     }
 
     public static void deleteItem(Input input, Tracker tracker) {
-        int id = Integer.parseInt(input.askStr("Enter id: "));
+        int id = input.askInt("Enter id: ");
         if (tracker.delete(id)) {
             System.out.println("Заявка удалена успешно.");
         } else {
@@ -44,7 +44,7 @@ public class StartUI {
 
     public static void findId(Input input, Tracker tracker) {
         System.out.print("Enter id: ");
-        int id = Integer.parseInt(input.askStr("Enter id: "));
+        int id = input.askInt("Enter id: ");
         Item item = tracker.findById(id);
         if (item != null) {
             System.out.println(item);
@@ -74,9 +74,9 @@ public class StartUI {
             if (select == 0) {
                 StartUI.createItem(input, tracker);
             } else if (select == 1) {
-                StartUI.editItem(input, tracker);
+                StartUI.detelItem(input, tracker);
             } else if (select == 2) {
-                StartUI.deteleItem(input, tracker);
+                StartUI.editItem(input, tracker);
             } else if (select == 3) {
                 StartUI.deleteItem(input, tracker);
             } else if (select == 4) {
