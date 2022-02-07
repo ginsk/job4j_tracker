@@ -28,7 +28,8 @@ public class StartUI {
                 new FindNActon(),
                 new DeleteAction(),
                 new EditAction(),
-                new ReplaseAction()
+                new ReplaseAction(),
+                new ExitAction()
         };
         new StartUI().init(input, tracker, actions);
     }
