@@ -27,8 +27,8 @@ public class StartUI {
                 new FindAction(),
                 new FindNActon(),
                 new DeleteAction(),
-                new EditAction(),
                 new ReplaceAction(),
+                new FindAllAction(),
                 new ExitAction()
         };
         new StartUI().init(input, tracker, actions);
