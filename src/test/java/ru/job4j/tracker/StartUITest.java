@@ -55,4 +55,27 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()), is(nullValue()));
     }
+
+    @Test
+    public void whenFindItemTestOutputIsSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Input in = new StubInput(
+                new String[] {"0", "1"});
+        UserAction[] actions = new UserAction[]{
+                new FindAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. ===Find Item by Id==="+ ln
+                        + "1.====Exit=== " + ln
+                        +  "Menu:" + ln
+                        + "0. Find Item by Id" + ln
+                        + "1. Exit " + ln
+                        + "==== Exit ===" + ln
+        ));
+    }
 }
