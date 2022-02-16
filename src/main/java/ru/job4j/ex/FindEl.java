@@ -8,20 +8,19 @@ public class FindEl {
                 rsl = i;
                 break;
             }
-            if (rsl == -1) {
-                throw new ElementNotFoundException("Увы!");
-            }
+        }
+        if (rsl == -1) {
+            throw new ElementNotFoundException("Увы!");
         }
         return rsl;
     }
 
-    public static void main(String[] args) {
+public static void main(String[] args) {
         String[] word = {"f", "r", "h"};
         try {
             indexOf(word, "е");
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 }
