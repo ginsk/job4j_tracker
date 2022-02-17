@@ -3,23 +3,20 @@ package ru.job4j.ex;
 public class UserStory {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        for (int i = 0; i < users.length; i++) {
-            if (users[i].equals(login)) {
-                return users[i];
+        for (User user: users) {
+            if (users.equals(login)) {
+                return user;
             }
-            if (!users[i].equals(login)) {
+        }
                 throw new UserNotFoundException("Not found login");
 
             }
-        }
-        return null;
-    }
 
     public static boolean validate(User user) throws UserInvalidException {
         if (user.getUsername().length() < 3 || !user.isValid()) {
-            return false;
+            throw new UserInvalidException("User is invalid");
         }
-        throw new UserInvalidException("Юзер Инвалид");
+        return true;
     }
 
     public static void main(String[] args) {
@@ -31,14 +28,10 @@ public class UserStory {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (UserInvalidException ea) {
-            ea.printStackTrace();
-        } catch (UserNotFoundException en) {
-            en.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } catch (Throwable th) {
-            th.printStackTrace();
+        } catch (UserInvalidException ee) {
+            ee.printStackTrace();
+        } catch (UserNotFoundException ef) {
+            ef.printStackTrace();
         }
     }
 }
