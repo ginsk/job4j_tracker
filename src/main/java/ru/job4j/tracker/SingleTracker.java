@@ -5,7 +5,7 @@ import java.util.Arrays;
 public final class SingleTracker {
     private Tracker tracker = new Tracker();
 
-    private SingleTracker () {
+    private SingleTracker() {
 
     }
 
@@ -20,12 +20,15 @@ public final class SingleTracker {
     public Item[] findAll() {
         return tracker.findAll();
     }
+
     public Item[] findByName(String key) {
         return tracker.findByName(key);
     }
+
     public boolean replace(int id, Item item) {
-        return tracker.replace(id,item);
+        return tracker.replace(id, item);
     }
+
     public boolean delete(int id) {
        return tracker.delete(id);
     }
