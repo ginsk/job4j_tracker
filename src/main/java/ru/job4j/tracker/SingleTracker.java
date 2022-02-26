@@ -5,8 +5,13 @@ import java.util.Arrays;
 public final class SingleTracker {
     private Tracker tracker = new Tracker();
 
-    private SingleTracker() {
+    private static Tracker instance = null;
 
+    public  static Tracker getInstance() {
+        if (instance == null) {
+            instance = new Tracker();
+        }
+        return instance;
     }
 
     public Item add(Item item) {
