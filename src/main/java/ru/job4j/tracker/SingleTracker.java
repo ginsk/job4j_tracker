@@ -5,11 +5,15 @@ import java.util.Arrays;
 public final class SingleTracker {
     private Tracker tracker = new Tracker();
 
-    private static Tracker instance = null;
+    private static SingleTracker instance = null;
 
-    public  static Tracker getInstance() {
+    private SingleTracker() {
+
+    }
+
+    public  static SingleTracker getInstance() {
         if (instance == null) {
-            instance = new Tracker();
+            instance = new SingleTracker();
         }
         return instance;
     }
